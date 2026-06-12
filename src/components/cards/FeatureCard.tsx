@@ -1,7 +1,7 @@
-import type { ElementType } from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 type FeatureCardProps = {
-  icon: ElementType;
+  icon: LucideIcon;
   title: string;
   description: string;
 };

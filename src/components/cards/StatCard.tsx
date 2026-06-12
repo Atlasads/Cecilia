@@ -1,7 +1,7 @@
-import type { ElementType } from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 type StatCardProps = {
-  icon: ElementType;
+  icon: LucideIcon;
   value?: string;
   title: string;
   description?: string;
