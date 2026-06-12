@@ -13,8 +13,8 @@ export function HeroSection() {
       <div className="section-shell relative flex min-h-screen items-center pt-24">
         <div className="relative z-30 w-full max-w-[520px] pt-16 sm:pt-24 lg:w-[48%] lg:max-w-none lg:pt-0">
           <FadeIn delay={0.1}>
-            <h1 className="hero-heading text-[clamp(4.6rem,11vw,10.5rem)] font-black uppercase leading-[0.82] tracking-[-0.08em]">
-              Oi, eu<br />sou a<br />Cecília
+            <h1 className="hero-heading text-[clamp(4.6rem,10vw,9.5rem)] font-black uppercase leading-[0.82] tracking-[-0.05em]">
+              Oi, eu<br />sou a<br /><span className="tracking-[0.01em]">Cecília</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.25}>
@@ -33,17 +33,15 @@ export function HeroSection() {
           </FadeIn>
         </div>
 
-        <div className="pointer-events-none absolute bottom-0 right-[-4%] z-20 w-[260px] translate-y-[22.3%] sm:right-[-2%] sm:w-[290px] md:w-[320px] lg:left-[46%] lg:right-auto lg:w-[490px] xl:w-[560px]">
-          <motion.img
-            src={images.heroCharacter}
-            alt="Personagem 3D da tatuadora Cecília"
-            className="w-full select-none drop-shadow-2xl"
-            initial={{ opacity: 0, y: 60, scale: 0.95 }}
-            animate={{ opacity: 1, y: [0, -12, 0], rotate: [0, 0.5, 0], scale: 1 }}
-            transition={{ opacity: { duration: 0.9, delay: 0.35 }, scale: { duration: 0.9, delay: 0.35 }, y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }, rotate: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
-            style={{ willChange: 'transform' }}
-          />
-        </div>
+        <motion.img
+          src={images.heroCharacter}
+          alt="Personagem 3D da tatuadora Cecília"
+          className="pointer-events-none absolute bottom-0 right-0 z-20 w-[170px] select-none drop-shadow-2xl sm:w-[210px] md:right-[-2%] md:w-[260px] lg:left-[47%] lg:right-auto lg:w-[420px] xl:w-[500px]"
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: [0, -10, 0], rotate: [0, 0.4, 0], scale: 1 }}
+          transition={{ opacity: { duration: 0.9, delay: 0.35 }, scale: { duration: 0.9, delay: 0.35 }, y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }, rotate: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
+          style={{ willChange: 'transform' }}
+        />
       </div>
     </section>
   );
