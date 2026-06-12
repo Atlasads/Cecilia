@@ -1,17 +1,29 @@
 import { Instagram, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { brand, images } from '../data/siteContent';
+import { brand } from '../data/siteContent';
 import { OutlineButton } from '../components/buttons/OutlineButton';
 import { FadeIn } from '../components/motion/FadeIn';
 import { Navbar } from '../components/layout/Navbar';
+import heroVideo from '../assets/hero.mp4';
 
 export function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-screen overflow-hidden bg-texture">
+      {/* Background Video */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="absolute inset-0 z-0 h-full w-full object-cover opacity-50" 
+        src={heroVideo} 
+      />
+      
       <Navbar />
       <div className="grain pointer-events-none absolute inset-0 z-10" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
-      <div className="section-shell relative flex min-h-screen items-center pt-24">
+      <div className="absolute inset-x-0 bottom-0 z-10 h-px bg-white/10" />
+      
+      <div className="section-shell relative flex min-h-screen items-center pt-24 z-20">
         <div className="relative z-30 w-full max-w-[520px] pt-16 sm:pt-24 lg:w-[48%] lg:max-w-none lg:pt-0">
           <FadeIn delay={0.1}>
             <div className="mb-7 flex items-center gap-3 text-[#EAE0C8]/35">
@@ -44,15 +56,6 @@ export function HeroSection() {
         <div
           className="pointer-events-none absolute bottom-[-12rem] right-[-8rem] z-10 h-[26rem] w-[26rem] rounded-full blur-[90px] lg:bottom-[-14rem] lg:left-[48%] lg:right-auto lg:h-[38rem] lg:w-[38rem] lg:blur-[120px]"
           style={{ background: 'radial-gradient(circle, rgba(182,0,168,.35), transparent 65%)' }}
-        />
-        <motion.img
-          src={images.heroCharacter}
-          alt="Personagem 3D da tatuadora Cecília"
-          className="pointer-events-none absolute bottom-0 right-0 z-20 w-[170px] select-none drop-shadow-2xl sm:w-[210px] md:right-[-2%] md:w-[260px] lg:left-[47%] lg:right-auto lg:w-[420px] xl:w-[500px]"
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          animate={{ opacity: 1, y: [0, -10, 0], rotate: [0, 0.4, 0], scale: 1 }}
-          transition={{ opacity: { duration: 0.9, delay: 0.35 }, scale: { duration: 0.9, delay: 0.35 }, y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }, rotate: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
-          style={{ willChange: 'transform' }}
         />
       </div>
     </section>
